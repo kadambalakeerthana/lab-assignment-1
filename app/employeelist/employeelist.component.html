@@ -1,0 +1,33 @@
+<h1>employeelist !</h1>
+<table>
+    <thead>
+    <tr>
+    <th>Code</th>
+    <th>Name</th>
+    <th>Gender</th>
+    <th>Annual Salary</th>
+    <th>Date of Birth</th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor='let employee of employees'>
+            <td>{{employee.code}}</td>
+            <td>{{employee.name}}</td>
+            <td>{{employee.gender}}</td>
+            <td>{{employee.annualSalary}}</td>
+            <td>{{employee.dateOfBirth}}</td>
+        </tr>
+        <tr *ngIf="!employees || employees.length==0">
+            <td colspan="5">
+                No employees to display
+            </td>
+        </tr>
+    </tbody>
+   </table><br>
+   <h1>employee hobies</h1><br>
+   
+  
+<ul>
+ <li *ngFor="let employee of employees">
+     {{ employee.hobbie|mypipe:employee.hobbie}}</li>
+</ul>
